@@ -4,7 +4,7 @@ import SpeechRecognition from "react-speech-recognition";
 import { AContext } from "./Context";
 
 const Listening = () => {
-  const [micStatus, setMicStatus] = useState(false);
+  const [micStatus, setMicStatus] = useState(true);
   const { browserSupportsSpeechRecognition } = useContext(AContext);
 
   const buttonStatus = (event) => {
@@ -21,8 +21,8 @@ const Listening = () => {
     return <span>Browser doesn't support speech recognition.</span>;
   }
   return (
-    <div
-      id={micStatus ? "#micOff" : "#micOn"}
+      <div
+          title="Click to talk"
       className="flex justify-center items-center cursor-pointer p-10 my-4 shadow-2xl rounded-lg text-4xl"
       onClick={buttonStatus}
     >
