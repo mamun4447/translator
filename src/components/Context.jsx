@@ -11,9 +11,9 @@ const Context = ({ children }) => {
     const [output, setOutput] = useState("");
 
   useEffect(() => {
-    fetch("https://libretranslate.com/languages")
+    fetch("https://translator-server-beryl.vercel.app/languages")
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => setData(data.data));
   }, []);
   return (
     <AContext.Provider
